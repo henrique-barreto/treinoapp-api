@@ -46,7 +46,7 @@ public class UsuarioCadastroController {
 		return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
 	}
 	
-	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	//@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@RequestMapping(path = "/busca", method = RequestMethod.GET)
 	public ResponseEntity<List<Usuario>> buscarPorNome(@RequestParam String nome) {
 		System.out.println("Nome: " + nome);

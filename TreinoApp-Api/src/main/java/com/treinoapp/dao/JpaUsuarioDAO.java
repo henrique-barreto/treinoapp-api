@@ -3,6 +3,7 @@ package com.treinoapp.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
@@ -18,7 +19,6 @@ public class JpaUsuarioDAO implements UsuarioDAO {
 
 	@Override
 	public void adicionar(Usuario usuario) {
-		System.out.println("JpaUsuarioDAO... ");
 		em.persist(usuario);
 	}
 
@@ -38,10 +38,34 @@ public class JpaUsuarioDAO implements UsuarioDAO {
 	}
 
 	@Override
+	public Usuario buscarPorEmail(String email) {
+		email = email.trim();
+		try {
+			String consulta = "select u from Usuario u where u.email = :email";
+			TypedQuery<Usuario> query = em.createQuery(consulta, Usuario.class);
+			query.setParameter("email", email);
+			return query.getSingleResult();
+		} catch (NoResultException e) {
+			System.out.println("Nenhum usuario com email: " + email);
+			return null;
+		}
+		
+	}
+	
+	@Override
 	public List<Usuario> buscarPorNome(String nome) {
 		String consulta = "select u from Usuario u where u.nome like :nome";
 		TypedQuery<Usuario> query = em.createQuery(consulta, Usuario.class);
 		query.setParameter("nome", "%" + nome + "%");
+		return query.getResultList();
+	}
+
+
+	@Override
+	public List<Usuario> buscarPorParteEmail(String email) {
+		String consulta = "select u from Usuario u where u.email like :email";
+		TypedQuery<Usuario> query = em.createQuery(consulta, Usuario.class);
+		query.setParameter("email", "%" + email + "%");
 		return query.getResultList();
 	}
 

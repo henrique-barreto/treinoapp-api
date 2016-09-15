@@ -19,7 +19,6 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 	@Override
 	public void adicionar(Usuario usuario) {
-		System.out.println("Adicionando usuario...");
 		dao.adicionar(usuario);
 	}
 
@@ -41,6 +40,16 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Override
 	public List<Usuario> buscarPorNome(String nome) {
 		return dao.buscarPorNome(nome);
+	}
+
+	@Override
+	public List<Usuario> buscarPorParteEmail(String email) {
+		return dao.buscarPorParteEmail(email);
+	}
+
+	@Override
+	public Usuario buscarPorEmail(String email) {
+		return dao.buscarPorEmail(email);
 	}
 
 }

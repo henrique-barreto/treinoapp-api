@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+
+  <!-- styles -->
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+  <!-- style css -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style/home-aluno-style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style/avaliacao-style2.css">
+
+  <!-- scripts -->
+  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+
+  <!-- angular -->
+  <script type="text/javascript" src="app/angular.min.js"></script>
+  <script type="text/javascript" src="app/angular-ui-router.min.js"></script>
+  <script type="text/javascript" src="app/angular-cookies.min.js"></script>
+
+  <!-- modules -->
+  <script type="text/javascript" src="app/app.js"></script>
+  <script type="text/javascript" src="app/modules/professor/professor-module.js"></script>
+
+  <!-- shared -->
+  <script type="text/javascript" src="app/shared/header/header-directive.js"></script>
+  <script type="text/javascript" src="app/shared/menu/menu-lateral-directive.js"></script>
+  <script type="text/javascript" src="app/shared/services/alunos.js"></script>
+
+  <!-- authentication -->
+  <script type="text/javascript" src="app/modules/authentication/authentication-service.js"></script>
+  <script type="text/javascript" src="app/modules/authentication/login-controller.js"></script>
+
+  <!-- professor -->
+  <script type="text/javascript" src="app/modules/professor/controllers/busca-aluno-controller.js"></script>
+
+</head>
+<body>
+  <ui-view></ui-view>
+</body>
+
+</html>

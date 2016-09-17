@@ -1,0 +1,156 @@
+body {
+	background-color: #f1f1f1;
+		margin:0;
+	padding:0;
+	height:100%;
+}
+/*Google Green
+Hex: #3cba54
+RGB: 60, 186, 84
+Google Yellow
+Hex: #f4c20d
+RGB: 244, 194, 13
+Google Red
+Hex: #db3236
+RGB: 219, 50, 54
+Google Blue
+Hex: #4885ed
+RGB: 72, 133, 237*/
+
+#page-container {
+	height: 100%;
+	width: 100%;
+	position: relative;
+
+}
+
+#header .navbar {
+	background-color: #4885ed;
+	border-bottom: 1px solid #999;
+}
+#header .navbar a {
+	color: #FFF;
+}
+
+/*#header .navbar-toggle {
+	background-color: red;
+	color: #FFF;
+	font-size: 18px;
+	float: left;
+	padding: 15px 15px;
+}
+*/
+#page-body {
+	height: 100%;
+	width: 100%;
+	padding-top: 70px;
+	padding-bottom:100px;
+
+}
+
+#left-menu {
+	background-color: #FFF;
+	box-shadow: 5px 10px 15px 5px rgba(0,0,0,.1);
+	border-right: 1px solid rgba(0,0,0,0.14);
+	color: #333;
+
+	width: 250px;
+	position: fixed;
+	height: 100%;
+	margin-top: 0;
+	float: left;
+	display: none;
+	padding-top: 80px;
+}
+
+#page-content {
+	max-width: 970px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: blue;
+	height: 800px;
+}
+
+@media screen and (min-width:1220px)  {
+	#page-content {
+		padding-left: 250px;
+		margin-left: 0;
+	}
+}
+
+@media screen and (min-width:1480px)  {
+	#left-menu {
+		/*display: block;*/
+	}
+
+	#page-body {
+		/*padding-left: 250px;*/
+	}	
+}
+
+
+/*============================================== left-menu =========================================*/
+.left-menu-toggle {
+  position: relative;
+  /*float: right;*/
+  /*margin-left: 15px;*/
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.left-menu-toggle:focus {
+  outline: 0;
+}
+.left-menu-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+}
+.left-menu-toggle .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+@media (min-width: 1480px) {
+  .left-menu-toggle {
+    display: none;
+  }
+}
+
+.navbar-aluno .left-menu-toggle {
+  /*border-color: #FFFFFF;*/
+}
+.navbar-aluno .left-menu-toggle:hover,
+.navbar-aluno .left-menu-toggle:focus {
+  /*background-color: #1565C0;*/
+}
+.navbar-aluno .left-menu-toggle .icon-bar {
+  background-color: #ffffff;
+}
+
+.container {
+	/*max-width: 1066px;*/
+}
+
+/*================== footer ==============*/
+footer {
+}
+
+
+
+/*=============================== fim estrutura ===============================*/
+.card {
+	margin: 0 0 10px;
+	border: 0;
+	background: #fff;
+	box-shadow: 0 1px 2px rgba(0,0,0,.1);
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.card-padding {
+	padding: 15px;
+}

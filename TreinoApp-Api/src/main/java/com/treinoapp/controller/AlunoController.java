@@ -30,7 +30,6 @@ public class AlunoController {
 	public ResponseEntity<String> adicionar(@RequestBody Aluno aluno) {
 
 		logger.debug("adicionar() Adicionando aluno com nome: " + aluno.getNome());
-
 		alunoService.adicionar(aluno);
 		return new ResponseEntity<String>("Aluno cadastrado com sucesso!", HttpStatus.OK);
 	}

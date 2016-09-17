@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 
 import com.treinoapp.model.Permissao;
 import com.treinoapp.model.Usuario;
-import com.treinoapp.services.UsuarioService;
+import com.treinoapp.services.interfaces.UsuarioService;
 
 @Component
 public class MyUserDetailsService implements UserDetailsService {

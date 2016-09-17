@@ -1,18 +1,15 @@
-package com.treinoapp.services;
+package com.treinoapp.services.interfaces;
 
 import java.util.List;
 
 import com.treinoapp.model.Usuario;
 
-public interface UsuarioService {
+public interface UsuarioService extends GenericService<Usuario, Long> {
 
-	void adicionar(Usuario usuario);
-	void atualizar(Usuario usuario);
-	void remover(Long id);
-	Usuario buscarPorId(Long id);
 	Usuario buscarPorEmail(String email);
-	
+
 	List<Usuario> buscarPorNome(String nome);
+
 	List<Usuario> buscarPorParteEmail(String email);
-	
+
 }

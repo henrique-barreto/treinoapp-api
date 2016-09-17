@@ -8,21 +8,19 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Treino {
+public class AvaliacaoFisica {
 
 	@Id
 	@GeneratedValue
 	private Long id;
 
-	private String data;
+	private String percentualGordura;
 
-	private String vencimento;
-
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ALUNO_ID")
 	private Aluno aluno;
-	
-	@ManyToOne(fetch = FetchType.EAGER)
+
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "PROFESSOR_ID")
 	private Professor professor;
 
@@ -34,20 +32,12 @@ public class Treino {
 		this.id = id;
 	}
 
-	public String getData() {
-		return data;
+	public String getPercentualGordura() {
+		return percentualGordura;
 	}
 
-	public void setData(String data) {
-		this.data = data;
-	}
-
-	public String getVencimento() {
-		return vencimento;
-	}
-
-	public void setVencimento(String vencimento) {
-		this.vencimento = vencimento;
+	public void setPercentualGordura(String percentualGordura) {
+		this.percentualGordura = percentualGordura;
 	}
 
 	public Aluno getAluno() {
@@ -65,5 +55,6 @@ public class Treino {
 	public void setProfessor(Professor professor) {
 		this.professor = professor;
 	}
-
+	
+	
 }

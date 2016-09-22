@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.treinoapp.dao.interfaces.ProfessorDAO;
+import com.treinoapp.model.Permissao;
 import com.treinoapp.model.Professor;
 import com.treinoapp.services.interfaces.ProfessorService;
 
@@ -18,13 +19,18 @@ import com.treinoapp.services.interfaces.ProfessorService;
 public class ProfessorServiceImpl implements ProfessorService {
 
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
-	
+
 	@Autowired
 	private ProfessorDAO dao;
 
 	@Override
 	public Professor adicionar(Professor professor) {
 		logger.debug("adicionar() Adicionar professor...");
+
+		if (professor.getPermissao() != Permissao.ROLE_PROFESSOR) {
+			logger.info("adicionar() Adicionando professor com uma permissao diferente: " + professor.getPermissao());
+			professor.setPermissao(Permissao.ROLE_PROFESSOR);
+		}
 		return dao.adicionar(professor);
 	}
 

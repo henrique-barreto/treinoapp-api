@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.treinoapp.dao.interfaces.AlunoDAO;
 import com.treinoapp.model.Aluno;
+import com.treinoapp.model.Permissao;
 import com.treinoapp.services.interfaces.AlunoService;
 
 @Service
@@ -25,6 +26,11 @@ public class AlunoServiceImpl implements AlunoService {
 	@Override
 	public Aluno adicionar(Aluno aluno) {
 		logger.debug("adicionar() Adicionando aluno com nome: " + aluno.getNome());
+
+		if (aluno.getPermissao() != Permissao.ROLE_ALUNO) {
+			logger.info("adicionar() Adicionando aluno com uma permissao diferente: " + aluno.getPermissao());
+			aluno.setPermissao(Permissao.ROLE_ALUNO);
+		}
 		return dao.adicionar(aluno);
 	}
 
@@ -55,7 +61,7 @@ public class AlunoServiceImpl implements AlunoService {
 	@Override
 	public List<Aluno> buscarPorNome(String nome) {
 		logger.debug("buscarPorNome() Buscar aluno por nome: " + nome);
-		return buscarPorNome(nome);
+		return dao.buscarPorNome(nome);
 	}
 
 	@Override

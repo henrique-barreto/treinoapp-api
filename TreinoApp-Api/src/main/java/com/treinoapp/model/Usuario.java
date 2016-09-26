@@ -36,6 +36,9 @@ public abstract class Usuario {
 
 	@Enumerated(EnumType.STRING)
 	private Permissao permissao;
+	
+	@Enumerated(EnumType.STRING)
+	private Sexo sexo;
 
 	public Long getId() {
 		return id;
@@ -86,5 +89,14 @@ public abstract class Usuario {
 	public void setPermissao(Permissao permissao) {
 		this.permissao = permissao;
 	}
+
+	public Sexo getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(Sexo sexo) {
+		this.sexo = sexo;
+	}
+	
 
 }

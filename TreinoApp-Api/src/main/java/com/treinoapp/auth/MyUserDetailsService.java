@@ -29,12 +29,12 @@ public class MyUserDetailsService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-		try {
-			logger.info("loadUserByUsername()  Dormindo...");
-			Thread.sleep(5000l);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			logger.info("loadUserByUsername()  Dormindo...");
+//			Thread.sleep(5000l);
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
 
 		logger.debug("loadUserByUsername()  procurando por: " + username);
 

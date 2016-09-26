@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import com.treinoapp.model.Aluno;
 import com.treinoapp.model.Professor;
+import com.treinoapp.model.Sexo;
 import com.treinoapp.services.interfaces.AlunoService;
 import com.treinoapp.services.interfaces.ProfessorService;
 
@@ -75,6 +76,7 @@ public class PopularBanco {
 		a1.setSenha("123");
 		a1.setNome("Michel Temer");
 		a1.setIdade(78);
+		a1.setSexo(Sexo.MASCULINO);
 		alunoService.adicionar(a1);
 
 		Aluno a2 = new Aluno();
@@ -82,6 +84,7 @@ public class PopularBanco {
 		a2.setSenha("123");
 		a2.setNome("Dilma Roussef");
 		a2.setIdade(56);
+		a2.setSexo(Sexo.MASCULINO);
 		alunoService.adicionar(a2);
 
 		Aluno a3 = new Aluno();
@@ -89,6 +92,7 @@ public class PopularBanco {
 		a3.setSenha("123");
 		a3.setNome("Aécio Neves PSDB");
 		a3.setIdade(45);
+		a3.setSexo(Sexo.MASCULINO);
 		alunoService.adicionar(a3);
 
 		Aluno a4 = new Aluno();
@@ -96,6 +100,7 @@ public class PopularBanco {
 		a4.setSenha("123");
 		a4.setNome("Marina Silva PV");
 		a4.setIdade(74);
+		a4.setSexo(Sexo.MASCULINO);
 		alunoService.adicionar(a4);
 
 		Aluno a5 = new Aluno();
@@ -103,6 +108,7 @@ public class PopularBanco {
 		a5.setSenha("test");
 		a5.setNome("Aluno test");
 		a5.setIdade(21);
+		a5.setSexo(Sexo.MASCULINO);
 		alunoService.adicionar(a5);
 
 		Aluno a6 = new Aluno();
@@ -110,6 +116,7 @@ public class PopularBanco {
 		a6.setSenha("test");
 		a6.setNome("Henrique Eduardo Alves");
 		a6.setIdade(21);
+		a6.setSexo(Sexo.MASCULINO);
 		alunoService.adicionar(a6);
 
 		Aluno a7 = new Aluno();
@@ -117,6 +124,7 @@ public class PopularBanco {
 		a7.setSenha("test");
 		a7.setNome("Fernando Henrique Cardozo");
 		a7.setIdade(21);
+		a7.setSexo(Sexo.MASCULINO);
 		alunoService.adicionar(a7);
 
 		Aluno a8 = new Aluno();
@@ -124,6 +132,7 @@ public class PopularBanco {
 		a8.setSenha("test");
 		a8.setNome("Henrique Gonçalves Barreto");
 		a8.setIdade(36);
+		a8.setSexo(Sexo.MASCULINO);
 		alunoService.adicionar(a8);
 
 		Aluno a9 = new Aluno();
@@ -131,6 +140,7 @@ public class PopularBanco {
 		a9.setSenha("test");
 		a9.setNome("Henrique Santos Silva");
 		a9.setIdade(36);
+		a9.setSexo(Sexo.MASCULINO);
 		alunoService.adicionar(a9);
 
 	}

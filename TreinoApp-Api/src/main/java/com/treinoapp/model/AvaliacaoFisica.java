@@ -8,14 +8,16 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.treinoapp.avaliacao.CalculadoraBF;
+import com.treinoapp.avaliacao.ResultadoAvaliacao;
+
 @Entity
 public class AvaliacaoFisica {
 
 	@Id
 	@GeneratedValue
 	private Long id;
-
-	private String percentualGordura;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ALUNO_ID")
@@ -33,6 +35,7 @@ public class AvaliacaoFisica {
 
 	@Embedded
 	private Perimetria perimetria;
+	
 
 	public Long getId() {
 		return id;
@@ -40,14 +43,6 @@ public class AvaliacaoFisica {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getPercentualGordura() {
-		return percentualGordura;
-	}
-
-	public void setPercentualGordura(String percentualGordura) {
-		this.percentualGordura = percentualGordura;
 	}
 
 	public Aluno getAluno() {
@@ -89,5 +84,10 @@ public class AvaliacaoFisica {
 	public void setPerimetria(Perimetria perimetria) {
 		this.perimetria = perimetria;
 	}
-
+	
+	@JsonIgnore
+	public ResultadoAvaliacao getResultado() {
+		return new CalculadoraBF(this).getResultado();
+	}
+	
 }

@@ -9,7 +9,7 @@ import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.treinoapp", "com.treinoapp.test"})
+@ComponentScan(basePackages = {"com.treinoapp"})
 public class WebConfig extends WebMvcConfigurerAdapter {
 
 	// @Bean

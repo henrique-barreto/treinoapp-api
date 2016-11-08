@@ -35,7 +35,7 @@ public class AlunoController {
 	// |== Usuario service =|
 	// |====================|
 	@RequestMapping(method = RequestMethod.POST)
-	@ResponseStatus(HttpStatus.CREATED)
+	@ResponseStatus(HttpStatus.OK)
 	public void salvar(@RequestBody UsuarioDto dto) {
 		logger.debug("adicionar() Adicionando aluno com nome: " + dto.getNome());
 		usuarioService.salvar(new Aluno(dto));

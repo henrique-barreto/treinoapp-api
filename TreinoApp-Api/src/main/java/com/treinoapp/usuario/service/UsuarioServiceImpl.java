@@ -25,12 +25,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Autowired
 	private UsuarioRepository repository;
 
-	@Autowired
-	private UsuarioValidator validator;
+//	@Autowired
+//	private UsuarioValidator validator;
 
 	@Override
 	public void salvar(Usuario usuario) {
-		validator.validar(usuario);
+		//validator.validar(usuario);
 		logger.debug("salvar() Salvar usuario: " + usuario.getNome());
 		repository.save(usuario);
 	}
@@ -43,9 +43,9 @@ public class UsuarioServiceImpl implements UsuarioService {
 		if (usuario == null)
 			throw new MyEntityNotFoundException(new DefaultError("123", "Usuario com id: " + id + " nao encontrado."));
 
-		validator.validar(dto);
+		//validator.validar(dto);
 		usuario.setEmail(dto.getEmail());
-		usuario.setIdade(dto.getIdade());
+		//usuario.setIdade(dto.getDataNascimento());
 		usuario.setNome(dto.getNome());
 		usuario.setSenha(dto.getSenha());
 		usuario.setSexo(dto.getSexo());

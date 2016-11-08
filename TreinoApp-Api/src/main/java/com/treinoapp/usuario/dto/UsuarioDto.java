@@ -1,26 +1,17 @@
 package com.treinoapp.usuario.dto;
 
-import com.treinoapp.usuario.model.Sexo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class UsuarioDto {
 
-	private String email;
-
 	private String nome;
-
-	private int idade;
-
+	private String telefone;
+	private String email;
+	private String confirmarEmail;
+	private String sexo;
+	private String dataNascimento;
+	@JsonIgnore
 	private String senha;
-
-	private Sexo sexo;
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
 
 	public String getNome() {
 		return nome;
@@ -30,12 +21,44 @@ public class UsuarioDto {
 		this.nome = nome;
 	}
 
-	public int getIdade() {
-		return idade;
+	public String getTelefone() {
+		return telefone;
 	}
 
-	public void setIdade(int idade) {
-		this.idade = idade;
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getConfirmarEmail() {
+		return confirmarEmail;
+	}
+
+	public void setConfirmarEmail(String confirmarEmail) {
+		this.confirmarEmail = confirmarEmail;
+	}
+
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+
+	public String getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(String dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 
 	public String getSenha() {
@@ -45,13 +68,6 @@ public class UsuarioDto {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-
-	public Sexo getSexo() {
-		return sexo;
-	}
-
-	public void setSexo(Sexo sexo) {
-		this.sexo = sexo;
-	}
+	
 
 }

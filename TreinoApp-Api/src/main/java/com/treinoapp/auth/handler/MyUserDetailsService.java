@@ -63,6 +63,9 @@ public class MyUserDetailsService implements UserDetailsService {
 		} else if (permissao == Permissao.ROLE_PROFESSOR) {
 			logger.debug("loadUserAuthorities() Permissoes do usuario: ROLE_PROFESSOR");
 			authorities.add(new SimpleGrantedAuthority("ROLE_PROFESSOR"));
+		} else if (permissao == Permissao.ROLE_SECRETARIA) {
+			logger.debug("loadUserAuthorities() Permissoes do usuario: ROLE_SECRETARIA");
+			authorities.add(new SimpleGrantedAuthority("ROLE_SECRETARIA"));
 		}
 		return authorities;
 

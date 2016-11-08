@@ -1,6 +1,11 @@
 package com.treinoapp.usuario.model;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -32,8 +37,6 @@ public abstract class Usuario {
 	@NotNull
 	private String nome;
 
-	private int idade;
-
 	@JsonIgnore
 	private String senha;
 
@@ -43,6 +46,13 @@ public abstract class Usuario {
 
 	@Enumerated(EnumType.STRING)
 	private Sexo sexo;
+
+	private String telefone;
+
+	@JsonIgnore
+	@Convert(converter = LocalDateConverter.class)
+	@Column(name = "data_criacao")
+	private LocalDate dataNascimento;
 
 	@Deprecated
 	public Usuario() {
@@ -55,10 +65,16 @@ public abstract class Usuario {
 	public Usuario(Permissao permissao, UsuarioDto dto) {
 		this.permissao = permissao;
 		this.email = dto.getEmail();
-		this.idade = dto.getIdade();
 		this.nome = dto.getNome();
+		this.telefone = dto.getTelefone();
+
+		Sexo sexo = dto.getSexo().equalsIgnoreCase("Masculino") ? Sexo.MASCULINO : Sexo.FEMININO;
+		this.setSexo(sexo);
+
+		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		LocalDate localDate = LocalDate.parse(dto.getDataNascimento(), fmt);
+		this.dataNascimento = localDate;
 		this.senha = dto.getSenha();
-		this.sexo = dto.getSexo();
 	}
 
 	public Long getId() {
@@ -86,11 +102,9 @@ public abstract class Usuario {
 	}
 
 	public int getIdade() {
-		return idade;
-	}
-
-	public void setIdade(int idade) {
-		this.idade = idade;
+		LocalDate today = LocalDate.now();
+		Period p = Period.between(dataNascimento, today);
+		return p.getYears();
 	}
 
 	@JsonIgnore
@@ -117,6 +131,22 @@ public abstract class Usuario {
 
 	public void setSexo(Sexo sexo) {
 		this.sexo = sexo;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 
 }

@@ -9,5 +9,7 @@ import com.treinoapp.avaliacao.model.AvaliacaoFisica;
 public interface AvaliacaoRepository extends JpaRepository<AvaliacaoFisica, Long> {
 
 	List<AvaliacaoFisica> findByAlunoId(Long idAluno);
+	
+	List<AvaliacaoFisica> findFirst4ByAlunoId(Long idAluno);
 
 }

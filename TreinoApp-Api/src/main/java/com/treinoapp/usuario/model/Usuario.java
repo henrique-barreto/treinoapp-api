@@ -51,7 +51,7 @@ public abstract class Usuario {
 
 	@JsonIgnore
 	@Convert(converter = LocalDateConverter.class)
-	@Column(name = "data_criacao")
+	@Column(name = "data_nascimento")
 	private LocalDate dataNascimento;
 
 	@Deprecated

@@ -20,7 +20,7 @@ public class AvaliacaoEstatisticasService {
 
 	public EstatisticasDto pegarEstatisticas(Long id) {
 
-		List<AvaliacaoFisica> avaliacoes = repository.findByAlunoId(id);
+		List<AvaliacaoFisica> avaliacoes = repository.findFirst4ByAlunoId(id);
 		EstatisticasDto dto = new EstatisticasDto(avaliacoes);
 		return dto;
 
